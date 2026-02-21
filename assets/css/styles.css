@@ -185,6 +185,19 @@ h4 {
     font-size: 1.5rem;
     color: var(--gold);
     line-height: 1;
+    transition: font-size 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .logo-primary {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .logo-primary {
+        font-size: 1rem;
+    }
 }
 
 .logo-secondary {
@@ -194,6 +207,21 @@ h4 {
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-top: 4px;
+    transition: font-size 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .logo-secondary {
+        font-size: 0.65rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 380px) {
+    .logo-secondary {
+        font-size: 0.55rem;
+        letter-spacing: 0;
+    }
 }
 
 .nav-menu {
@@ -254,9 +282,10 @@ h4 {
     position: relative;
     text-align: center;
     padding-top: var(--nav-height);
-    padding-bottom: 40px;
+    padding-bottom: 60px;
+    /* Added more space for mobile safety */
     background: radial-gradient(circle at center, rgba(30, 25, 10, 0.8) 0%, var(--primary-black) 80%);
-    overflow: hidden;
+    /* overflow: hidden; Removed to prevent clipping on short devices */
 }
 
 .hero::after {
@@ -664,7 +693,7 @@ h4 {
         flex-direction: column;
         text-align: center;
         gap: 20px;
-        padding: 20px 20px 10px;
+        padding: 40px 20px 20px;
     }
 
     .hero-left {
@@ -672,7 +701,7 @@ h4 {
     }
 
     .hero-logo {
-        max-height: 180px;
+        max-height: 160px;
         width: auto;
     }
 
@@ -680,20 +709,24 @@ h4 {
         width: 150px;
         height: 2px;
         background: linear-gradient(to right, transparent, var(--gold), transparent);
+        margin: 0 auto;
     }
 
     .hero-buttons {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 15px;
+        margin-top: 10px;
     }
 
     .hero-buttons .btn {
         margin-left: 0 !important;
+        width: 100%;
+        max-width: 280px;
     }
 
     .hero-title {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
     }
 
     .hero-subtitle {
@@ -712,6 +745,11 @@ h4 {
 
     .mobile-toggle {
         display: block;
+        padding: 10px;
+    }
+
+    .nav-container {
+        padding: 0 15px;
     }
 
     .nav-menu {
@@ -735,40 +773,61 @@ h4 {
 /* Small phones (iPhone SE, older iOS portrait) */
 @media (max-width: 480px) {
     .hero-content {
-        gap: 14px;
-        padding: 16px 16px 8px;
+        gap: 15px;
+        padding: 30px 15px 15px;
     }
 
     .hero-logo {
-        max-height: 140px;
+        max-height: 120px;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         letter-spacing: 0;
+        margin-bottom: 15px;
     }
 
     .hero-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         letter-spacing: 2px;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
 
     .hero-text {
-        font-size: 0.95rem;
-        margin-bottom: 16px;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        line-height: 1.5;
     }
 
     .hero-divider {
-        width: 100px;
+        width: 80px;
     }
 
     .btn {
-        padding: 10px 22px;
-        font-size: 0.88rem;
+        padding: 12px 20px;
+        font-size: 0.85rem;
     }
 
     .section {
-        padding: 70px 0;
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .logo-link {
+        gap: 8px;
+    }
+}
+
+/* Extra tight screens */
+@media (max-width: 350px) {
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .nav-container {
+        padding: 0 10px;
     }
 }
