@@ -1,3 +1,12 @@
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --primary-black: #050505;
     --secondary-black: #111111;
@@ -47,7 +56,7 @@ h4 {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 2.5rem);
     color: var(--gold);
     margin-bottom: 2rem;
     background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
@@ -182,7 +191,8 @@ h4 {
 
 .logo-primary {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    /* Fluid font size */
     color: var(--gold);
     line-height: 1;
     transition: font-size 0.3s ease;
@@ -291,7 +301,8 @@ h4 {
     padding-bottom: 60px;
     /* Added more space for mobile safety */
     background: radial-gradient(circle at center, rgba(30, 25, 10, 0.8) 0%, var(--primary-black) 80%);
-    /* overflow: hidden; Removed to prevent clipping on short devices */
+    overflow: hidden;
+    /* Added to clip the decorative pulseGlow element */
 }
 
 .hero::after {
@@ -364,7 +375,8 @@ h4 {
 }
 
 .hero-title {
-    font-size: 4.5rem;
+    font-size: clamp(2rem, 8vw, 4.5rem);
+    /* Fluid typography */
     color: #fff;
     line-height: 1.1;
     margin-bottom: 20px;
